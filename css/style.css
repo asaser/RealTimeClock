@@ -86,3 +86,8 @@ body {
   height: 8px;
 }
 
+.main-date {
+    height: 200px;
+    width: auto;
+    position: relative;
+}

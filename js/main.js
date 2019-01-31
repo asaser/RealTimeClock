@@ -1,23 +1,39 @@
-const secondReal = document.querySelector('.h-second');
-const minuteReal = document.querySelector('.h-minute');
-const hourReal = document.querySelector('.h-hour');
+const secondTime = document.querySelector(".h-second");
+const minuteTime = document.querySelector(".h-minute");
+const hourTime = document.querySelector(".h-hour");
+
+const currentDate = document.querySelector(".current-date");
+
 
 function realTime() {
-    const real = new Date();
+        
+    const sec = new Date().getSeconds();
+    const min = new Date().getMinutes();
+    const hour = new Date().getHours();
+    
+    const sec2 = ((sec / 60) * 360) + 90;
+    const min2 = ((min / 60) * 360) + ((sec / 60) * 6) + 90;
+    const hour2 = ((hour / 12) * 360) + ((min / 60) * 30) + 90;
 
-    const second = real.getSeconds();
-    const secondHand = ((second / 60) * 360) + 90;
-    secondReal.style.transform = `rotate(${secondHand}deg)`;
-
-    const minute = real.getMinutes();
-    const minuteHand = ((minute / 60) * 360) + ((second/60)*6) + 90;
-    minuteReal.style.transform = `rotate(${minuteHand}deg)`;
-
-    const hour = real.getHours();
-    const hourHand = ((hour / 12) * 360) + ((minute/60)*30) + 90;
-    hourReal.style.transform = `rotate(${hourHand}deg)`;
+    secondTime.style.transform = `rotate(${sec2}deg)`;
+    minuteTime.style.transform = `rotate(${min2}deg)`;
+    hourTime.style.transform = `rotate(${hour2}deg)`;
 }
 
+
+function realDate() {
+    
+    today = new Date();
+    
+    const dd = today.getDay();
+    const mm = today.getMonth() + 1;  //Januar
+    const yy = today.getYear();
+    
+    currentDate = document.getElementById(".current-date").innerHTML = dd + "-" + mm + "-" + yy; 
+}
+
+setInterval(realDate, 1000);
 setInterval(realTime, 1000);
 
+realDate();
 realTime();
