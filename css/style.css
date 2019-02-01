@@ -1,93 +1,90 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-weight: 300px;
-  background-color: rgb(41, 34, 34);
-  display: flex;
-  flex: 1;
+    margin: 0;
+    padding: 0;
+    font-weight: 300px;
+    background-color: rgb(41, 34, 34);
+    display: flex;
+    flex: 1;
 }
 
 .main-clock {
-  height: 500px;
-  width: 500px;
-  background-color: rgb(227, 227, 236);
-  border-radius: 100%;
-  border:20px groove rgb(199, 25, 25);
-  margin: 50px auto;
-  position: relative;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(227, 227, 236);
+    border-radius: 100%;
+    border: 20px groove rgb(199, 25, 25);
+    margin: 50px auto;
+    position: relative;
 }
 
 .circle-clock {
-  position: relative;
-  height: 100%;
-  width: 100%; 
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.numbers {
+    text-align: right;
+    font-size: 45px;
+    color: #a34646;
 }
 
 .twelve {
-  text-align: right;
-  right: 45%;
-  top: 1%;
-  font-size: 45px;
-  position: absolute;
-  color: rgb(41, 34, 34);
+    right: 45%;
+    top: 1%;
+    position: absolute;
 }
 
 .three {
-  text-align: right;
-  left: 92%;
-  bottom: 42%;
-  font-size: 45px;
-  position: absolute;
-  color: rgb(41, 34, 34);
+    left: 92%;
+    bottom: 42%;
+    position: absolute;
 }
 
 .six {
-  text-align: right;
-  left: 45%;
-  top: 88%;
-  font-size: 45px;
-  position: absolute;
-  color: rgb(41, 34, 34);
+    left: 45%;
+    top: 88%;
+    position: absolute;
 }
 
 .nine {
-  text-align: right;
-  right: 92%;
-  bottom: 42%;
-  font-size: 45px;
-  position: absolute;
-  color: rgb(41, 34, 34);
+    right: 92%;
+    bottom: 42%;
+    position: absolute;
 }
 
 .hand {
-  width: 50%;
-  position: absolute;
-  background: rgb(221, 9, 9);
-  top: 50%;
-  transform-origin: 100%;
-  transform: rotate(90deg);
-  transition: all 0.05s;
-  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    width: 45%;
+    position: absolute;
+    background: #9b0909;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
 .h-second {
-  height: 2px;
+    height: 2px;
 }
 
 .h-minute {
-  height: 4px;
+    height: 4px;
 }
 
 .h-hour {
-  height: 8px;
+    height: 8px;
 }
 
-.main-date {
-    height: 200px;
-    width: auto;
-    position: relative;
+.show-real-time {
+    position: absolute;
+    color: #a34646;
+    left: 20%;
+    bottom: -25%;
+    font-size: 50px;
+    letter-spacing: 5px;
 }

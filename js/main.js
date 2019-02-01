@@ -2,11 +2,10 @@ const secondTime = document.querySelector(".h-second");
 const minuteTime = document.querySelector(".h-minute");
 const hourTime = document.querySelector(".h-hour");
 
-const currentDate = document.querySelector(".current-date");
-
+const showRealTime = document.querySelector(".show-real-time");
 
 function realTime() {
-        
+    
     const sec = new Date().getSeconds();
     const min = new Date().getMinutes();
     const hour = new Date().getHours();
@@ -21,19 +20,23 @@ function realTime() {
 }
 
 
-function realDate() {
+function digitalCloak() {
     
-    today = new Date();
-    
-    const dd = today.getDay();
-    const mm = today.getMonth() + 1;  //Januar
-    const yy = today.getYear();
-    
-    currentDate = document.getElementById(".current-date").innerHTML = dd + "-" + mm + "-" + yy; 
+    let s = new Date().getSeconds();
+    let m = new Date().getMinutes();
+    let h = new Date().getHours();
+
+    s = (s < 10) ? "0" + s : s;
+    m = (m < 10) ? "0" + m : m;
+    h = (h < 10) ? "0" + h : h;
+
+    const showTimeOfDay = h + ":" + m + ":" + s; 
+
+    showRealTime.innerHTML = showTimeOfDay;
 }
 
-setInterval(realDate, 1000);
 setInterval(realTime, 1000);
+setInterval(digitalCloak, 1000);
 
-realDate();
 realTime();
+digitalCloak();
